@@ -942,4 +942,6 @@ client.run("Mzg0NzA4OTQ2ODI2NjI1MDM1.DP2vpA.lkuzj_99tjAGqzDZfBaBhx9pF-g")
         await client.send_message(message.channel, random.choice (["https://i.imgur.com/aRXAIXr.gifv"]))
 
 client.run("deleted for reasons ;)")
+
+os.environ.get("BOT_TOKEN")
         
