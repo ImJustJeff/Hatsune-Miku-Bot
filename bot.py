@@ -40,7 +40,7 @@ Check two: Complete
 Check three: Completed
 Hatsune Miku Bot is Reporting for Duty""")
 
-    elif message.content.startswith("$commands"):
+    elif message.content.startswith("$gone"):
         emb = (discord.Embed(title="My commands are in these 3 categories", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="So here are all my general commands", value='$commands, $construction, $invite, $jeff, $serverinfo, $userinfo, $owner, $ban, $mute, $unmute, $kick, $cleanup and $contact', inline=True)
         emb.add_field(name='These are all my fun commands', value='$ping, $8ball, $kiss, $meme, $hugs, $pat, $slap, $poke, $holdhands, $hello, $tsundere, $flip, $rps, $urban, $choose, $gif, $gifr, $imgur, $louise, $raziel, $sagiri, $miku and $koneko', inline=True)
@@ -51,7 +51,7 @@ Hatsune Miku Bot is Reporting for Duty""")
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
         await client.send_message(message.channel, embed=emb)
 
-    elif message.content.startswith("$gone"):
+    elif message.content.startswith("$commands"):
         emb = (discord.Embed(title="My commands are in these 2 categories", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="So here are all my general commands", value='$commands, $construction, $invite, $jeff & $owner', inline=True)
         emb.add_field(name='These are all my fun commands', value='$ping, $8ball, $kiss, $meme, $hugs, $pat, $slap, $poke, $holdhands, $hello, $tsundere, $louise, $raziel, $sagiri, $miku & $koneko', inline=True)
@@ -134,7 +134,7 @@ Hatsune Miku Bot is Reporting for Duty""")
         emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
         await client.send_message(message.channel, embed=emb)
 
-    elif message.content.startswith("$."):
+    elif message.content.startswith("$ping"):
         await client.send_message(message.channel, "pong!")
 
     elif message.content.startswith("$accept"):
