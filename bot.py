@@ -620,4 +620,6 @@ Hatsune Miku Bot is Reporting for Duty""")
     elif message.content.startswith("$test"):
         await client.send_message(message.channel, random.choice (["https://i.imgur.com/aRXAIXr.gifv"]))
         
+client.run("Mzg0NzA4OTQ2ODI2NjI1MDM1.DP2vpA.lkuzj_99tjAGqzDZfBaBhx9pF-g")
+        
 client.login(os.environ.get("BOT_TOKEN"))
