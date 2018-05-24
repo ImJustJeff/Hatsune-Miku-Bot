@@ -548,24 +548,23 @@ Hatsune Miku Bot is Reporting for Duty""")
                                                                    "Holds your hand ^^ https://imgur.com/AxM32T3"]))
 
     elif message.content.startswith("$kiss"):
-        await client.send_message(message.channel, random.choice (["Kisses you <3 https://imgur.com/IUknQHD",
-                                                                   "Kisses you <3 https://imgur.com/GFwg6AA",
-                                                                   "Kisses you <3 https://imgur.com/tJwJzuq",
-                                                                   "Kisses you <3 https://imgur.com/sbKP12n",
-                                                                   "Kisses you <3 https://imgur.com/mHdX9E0",
-                                                                   "Kisses you <3 https://imgur.com/qjZHlWo",
-                                                                   "Kisses you <3 https://imgur.com/gZtIZWR",
-                                                                   "Kisses you <3 https://imgur.com/skgwkJ5",
-                                                                   "Kisses you <3 https://imgur.com/e5o6qLz",
-                                                                   "Kisses you <3 https://imgur.com/i1WARIG",
-                                                                   "Kisses you <3 https://imgur.com/hallzZk",
-                                                                   "Kisses you <3 https://imgur.com/ydEkiaH",
-                                                                   "Kisses you <3 https://imgur.com/dEpnn36",
-                                                                   "Kisses you <3 https://imgur.com/Wk4XJ4D",
-                                                                   "Kisses you <3 https://imgur.com/5u4MD64",
-                                                                   "Kisses you <3 https://imgur.com/HQX1Q8X",
-                                                                   "Kisses you <3 https://imgur.com/F2uOLdM",
-                                                                   "Kisses you <3 https://imgur.com/9w3w3rQ"]))
+        await client.send_message(message.channel, random.choice (["Kisses you <3 https://media.giphy.com/media/3obegyJLaSb0tKPQXo/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/fdzUxG2NWezLFVftaZ/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/3YJ5pPYHLoQLQmrWOY/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/1AeQmDXYXmGjjE6TsD/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/9VrEcC9GOcySGFHDy0/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/jbKt8zyiHF3DXpaLUL/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/88iHJdUf0EtsAchNwq/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/ZgRg3qRXVhR5KV5UUu/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/2wh2c0jRNlILwMo0tC/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/fxdXBacyHlWAGQnUYB/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/1kJ6VcHPLmVtbR0N14/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/2aKGDxMliW5kGDZEkC/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/4HepfF109Gj550l4DQ/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/EBSSg7iBXuXc0ZzZhk/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/9V1KQxfnJyDMTGeCvF/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/55ojWaw7MGJhmY9VWy/giphy.gif",
+                                                                   "Kisses you <3 https://media.giphy.com/media/1k2UWbInw3WwQc7hxc/giphy.gif"]))
 
     elif message.content.startswith("$poke"):
         await client.send_message(message.channel, random.choice (["I want you attention so POKE https://imgur.com/HVCd8YT",
