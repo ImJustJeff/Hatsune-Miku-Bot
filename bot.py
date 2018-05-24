@@ -608,7 +608,7 @@ Hatsune Miku Bot is Reporting for Duty""")
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/29IeWmTsqElFIVj5cg/giphy.gif",
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/1VTF33XB2dBSTNecnH/giphy.gif",
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/cYoR0FNB7oFLOhp1FE/giphy.gif",
-                                                                   "I'm so mad at you so SLAP!!! https://media.giphy.com/media/U8lT5R5g4RZ7EISvUR/giphy.gif,
+                                                                   "I'm so mad at you so SLAP!!! https://media.giphy.com/media/U8lT5R5g4RZ7EISvUR/giphy.gif",
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/u47uvxPZox0pq81Uuf/giphy.gif",
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/1woC1tiECuYElHc6os/giphy.gif",
                                                                    "I'm so mad at you so SLAP!!! https://media.giphy.com/media/OOigrw2Wwu4PVi9xSn/giphy.gif",
