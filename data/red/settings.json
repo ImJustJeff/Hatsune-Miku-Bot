@@ -1,0 +1,19 @@
+{
+    "368401359168339970" : {
+        "ADMIN_ROLE" : "266245400988614656",
+        "MOD_ROLE" : "Process",
+        "PREFIXES" : []
+    },
+    "EMAIL" : null,
+    "OWNER" : "266245400988614656",
+    "PASSWORD" : null,
+    "PREFIXES" : [
+        "$"
+    ],
+    "TOKEN" : "Mzg0NzA4OTQ2ODI2NjI1MDM1.DW2wkQ.hWHVGGQsJDyMv-mjBicsqmaWG3I",
+    "default" : {
+        "ADMIN_ROLE" : "266245400988614656",
+        "MOD_ROLE" : "Process",
+        "PREFIXES" : []
+    }
+}
