@@ -41,12 +41,66 @@ Check three: Completed
 Hatsune Miku Bot is Reporting for Duty""")
 
     elif message.content.startswith("$gone"):
-        emb = (discord.Embed(title="My commands are in these 3 categories", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
-        emb.add_field(name="So here are all my general commands", value='$commands, $construction, $invite, $jeff, $serverinfo, $userinfo, $owner, $ban, $mute, $unmute, $kick, $cleanup and $contact', inline=True)
-        emb.add_field(name='These are all my fun commands', value='$ping, $8ball, $kiss, $meme, $hugs, $pat, $slap, $poke, $holdhands, $hello, $tsundere, $flip, $rps, $urban, $choose, $gif, $gifr, $imgur, $louise, $raziel, $sagiri, $miku and $koneko', inline=True)
-        emb.add_field(name='With these commands you can controll the music', value='$play, $pause, $resume, $prev, $repeat, $resume, $shuffle, $skip, $song, $stop $playlist and $queue', inline=True)
-        emb.set_author(name="Hatsune Miku Bot")
-        emb.set_author(name="Hatsune Miku Bot", url='http://bit.ly/2G7mB7Y')
+        emb = (discord.Embed(title="These are all my commands please enjoy them", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
+        emb.add_field(name="General commands:", value=
+"""
+--------------------
+$commands,
+$construction,
+$invite,
+$owner,
+$contact, (UNAVAILABLE)
+
+
+--------------------
+""", inline=True)
+        emb.add_field(name="mod commands (THESE ARE UNAVAILABLE FOR NOW):", value="""
+--------------------
+$serverinfo,
+$userinfo,
+$ban,
+$mute,
+$unmute,
+$kick,
+$cleanup,
+--------------------
+""", inline=True)
+        emb.add_field(name="Pictures/Gif commands:", value="""
+--------------------
+$kiss,
+$meme,
+$hugs,
+$pat,
+$slap,
+$poke,
+$holdhands,
+$louise,
+$raziel,
+$sagiri,
+$miku,
+$koneko,
+$popcorn,
+$stfu,
+--------------------
+""", inline=True)
+        emb.add_field(name="Fun commands", value="""
+--------------------
+$ping,
+$8ball,
+$hello,
+$tsundere,
+$flip, (UNAVAILABLE)
+$rps, (UNAVAILABLE)
+$urban, (UNAVAILABLE)
+$choose, (UNAVAILABLE)
+$accept,
+
+
+
+
+
+--------------------
+""", inline=True)
         emb.set_image(url='https://i.imgur.com/MUzvy9j.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
         await client.send_message(message.channel, embed=emb)
@@ -638,9 +692,35 @@ Hatsune Miku Bot is Reporting for Duty""")
                                                                    "There, there it's alright https://media.giphy.com/media/3BjlOCKxEM7fyNtsfi/giphy.gif"]))
                                                                 
 
-    elif message.content.startswith("$test"):
-        await client.send_message(message.channel, random.choice (["https://i.imgur.com/aRXAIXr.gifv"]))
+
+    elif message.content.startswith("$popcorn"):
+        await client.send_message(message.channel, random.choice ([":popcorn: anyone...? https://media.giphy.com/media/jnUJbfQ7atI2l8JxnC/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/5th9AXWLduy8tiee79/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/iOecBbnAoM7oBgj4Ql/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/8FuLD7udi0LBMBtDXD/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/3YHy2YmTrudO81XfHK/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/iNKJcVp3cgQJtReV4z/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/iNxi3EBgqXpQJNIOaF/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/3ba6CBs83z90clOz5z/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/1ipKDXGyl5oZJNVaHR/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/m9cg2GSbQEsMSKWtwZ/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/fHujNhh5BfDMymeG5r/giphy.gif",
+                                                                   "T:popcorn: anyone...? https://media.giphy.com/media/RIW8aISkVsQH7AMBof/giphy.gif",
+                                                                   ":popcorn: anyone...? https://media.giphy.com/media/8Ff4F0woCBDyEXDt7w/giphy.gif"]))
+
+    elif message.content.startswith("$stfu"):
+        await client.send_message(message.channel, random.choice (["JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/65VK7kBbhHpsVgaBTd/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/7FgI8OGvQmJRO30LXV/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/1zJUxWUeLLWQ06qi0G/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/29HWHjBTvxkiAm9ejS/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/xiNWajyOVXqPzIipgp/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/2jvQ9tM6Ud5v5RfrjO/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/8vZU5CI9iM85mzmR2x/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/2UJnryid8eTqrRNHk5/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/c6W456VKZ7dQkTpUwH/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/lzDaZZpTAak9Lb8BtS/giphy.gif",
+                                                                   "JUST SHUT UP ALREADY!!!! https://media.giphy.com/media/u0aX5a6x5NjGQif3f8/giphy.gif"]))
+
+
         
 client.run("Mzg0NzA4OTQ2ODI2NjI1MDM1.DP2vpA.lkuzj_99tjAGqzDZfBaBhx9pF-g")
-        
-client.login(os.environ.get("BOT_TOKEN"))
