@@ -69,7 +69,7 @@ $cleanup,
 --------------------
 $kiss,
 $meme,
-$hugs,
+$hug,
 $pat,
 $slap,
 $poke,
@@ -89,7 +89,7 @@ $ping,
 $8ball,
 $hello,
 $tsundere,
-$flip, (UNAVAILABLE)
+$flip,
 $rps, (UNAVAILABLE)
 $urban, (UNAVAILABLE)
 $choose, (UNAVAILABLE)
@@ -105,7 +105,7 @@ $accept,
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
         await client.send_message(message.channel, embed=emb)
 
-    elif message.content.startswith("$commands"):
+    elif message.content.startswith("$gone"):
         emb = (discord.Embed(title="My commands are in these 2 categories", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="So here are all my general commands", value='$commands, $construction, $invite, $jeff & $owner', inline=True)
         emb.add_field(name='These are all my fun commands', value='$ping, $8ball, $kiss, $meme, $hugs, $pat, $slap, $poke, $holdhands, $hello, $tsundere, $louise, $raziel, $sagiri, $miku & $koneko', inline=True)
@@ -216,11 +216,11 @@ $accept,
                                                                    ":8ball: Outlook not so good {0.author.mention}".format(message),
                                                                    ":8ball: Very doubtful {0.author.mention}".format(message)]))
         
-    elif message.content.startswith("$."):
+    elif message.content.startswith("$hello"):
         await client.send_message(message.channel, random.choice (["Hello *hugs* {0.author.mention}".format(message),
                                                                    "Hii I missed you {0.author.mention}".format(message),
                                                                    "You want to talk to me?{0.author.mention}".format(message)]))
-    elif message.content.startswith("$.."):
+    elif message.content.startswith("$flip"):
         await client.send_message(message.channel, random.choice (["It is tails {0.author.mention}".format(message),
                                                                    "It is heads {0.author.mention}".format(message),
                                                                    "I threw it to high and lost the coin.. {0.author.mention}".format(message)]))
@@ -494,7 +494,7 @@ $accept,
                                                                    "Look it is us ^-^ https://imgur.com/K3M7Lua",
                                                                    "Look it is us ^-^ https://imgur.com/qCpzSGV",
                                                                    "Look it is us ^-^ https://imgur.com/LFx1sE8",]))
-    elif message.content.startswith("$hugs"):
+    elif message.content.startswith("$hug"):
         await client.send_message(message.channel, random.choice (["Hugs you ^-^ https://media.giphy.com/media/sRFu8y27ZvWcizXvhZ/giphy.gif",
                                                                    "Hugs you ^-^ https://media.giphy.com/media/piJGRC4SI3rFlsStVl/giphy.gif",
                                                                    "Hugs you ^-^ https://media.giphy.com/media/82SkTj4bSjT3LK17aN/giphy.gif",
