@@ -427,7 +427,7 @@ $accept,
                                                                    "https://imgur.com/fnx9jMA",
                                                                    "https://imgur.com/59w3HB1",
                                                                    "https://imgur.com/gBKCnfI",
-                                                                   "https://imgur.com/QGYNiIo"]))
+                                                                   "https://imgur.com/QGYNiIo"])
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
 
