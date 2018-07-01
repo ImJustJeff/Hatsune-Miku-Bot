@@ -393,8 +393,8 @@ $accept,
         await client.send_message(message.channel, embed=emb)
 
     elif message.content.startswith("$miku"):
-       emb = discord.Embed(description="The cute Hatsune Miku is here")
-       link = random.choice(["https://i.imgur.com/hOxLRSd.jpg",
+        emb = discord.Embed(description="The cute Hatsune Miku is here")
+        link = random.choice(["https://i.imgur.com/hOxLRSd.jpg",
                                                                    "https://i.imgur.com/EgaUY6R.jpg",
                                                                    "https://imgur.com/JWkzplC",
                                                                    "https://imgur.com/6pNi4R5",
