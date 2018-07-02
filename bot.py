@@ -53,7 +53,7 @@ $contact, (UNAVAILABLE)
 
 
 --------------------
-""", inline=True)
+""", inline=Fasle)
         emb.add_field(name="mod commands (THESE ARE UNAVAILABLE FOR NOW):", value="""
 --------------------
 $serverinfo,
@@ -64,7 +64,7 @@ $unmute,
 $kick,
 $cleanup,
 --------------------
-""", inline=True)
+""", inline=Fasle)
         emb.add_field(name="Pictures/Gif commands:", value="""
 --------------------
 $kiss,
@@ -82,7 +82,7 @@ $koneko,
 $popcorn,
 $stfu,
 --------------------
-""", inline=True)
+""", inline=Fasle)
         emb.add_field(name="Fun commands", value="""
 --------------------
 $ping,
@@ -100,7 +100,7 @@ $accept,
 
 
 --------------------
-""", inline=True)
+""", inline=Fasle)
         emb.set_image(url='https://i.imgur.com/MUzvy9j.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
         await client.send_message(message.channel, embed=emb)
