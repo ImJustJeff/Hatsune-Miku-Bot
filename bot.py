@@ -514,6 +514,7 @@ $accept,
                                                                    "https://i.imgur.com/LFx1sE8.jpg",])
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
+        
     elif message.content.startswith("$hug"):
         emb = discord.Embed(description="Hugs you ^-^")
         link = random.choice(["https://media.giphy.com/media/sRFu8y27ZvWcizXvhZ/giphy.gif",
@@ -586,37 +587,38 @@ $accept,
                                                                    
 
     elif message.content.startswith("$holdhands"):
-        await client.send_message(message.channel, random.choice (["Holds your hand ^^ https://media.giphy.com/media/Mn2QhV5RKVnDFPm3xS/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/XJbZUmQTozjeovfDj5/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/65ARJduu1Ayge6lbb1/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/2UH5JGSkV7bL9KPxns/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/836SlQqmguF97blW7Z/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/67SPxHsGYvZRjBvPVG/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/9GJ0TobPeqryujJKrx/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1xkOTx6HQGHAlHhIJj/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/eB1n5v1AnJkhUam6rM/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1rMZB4yEPp92SandyF/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/ksbxFxDu8nbl2ulbpP/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/cXZT5GVAUoMCIzifAM/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/m9rNHsYSVNtUzmg67j/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/51YdFcndAtxP6Gphmz/giphy.gif",
-                                                                   "Please hold my hand ;-; https://media.giphy.com/media/cJk2CoSB0fLBxSpVJn/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1miLExf9KIOihnq4Lo/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1g2C2z64PRTqf6vQo5/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/vuPcWxM8f9HOOO9GPX/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/9rx8p3i2CLq6e42uCh/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/7vzDkVMCaFbazqyMma/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/31Q1ECNJI1iBSEO4zW/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/31Q1ECNJI1iBSEO4zW/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/521ZTNMaFn8zqF4yhQ/giphy.gif",
-                                                                   "Dammit that hurted :rage: https://media.giphy.com/media/1BfBbUl1bsOKxeJCPo/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1dKSVKfX0lm62obCp4/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1Y6eL9Rfjozej34MY3/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/yvX1KHKIRBpETHGtna/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/1sxtTkXPJzzHT6AFae/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/83cZKqPesn1gUeYclY/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/KVoMsguO6PYPAm5r7n/giphy.gif",
-                                                                   "Holds your hand ^^ https://media.giphy.com/media/2tOTUM0P3vgxLlmdq4/giphy.gif"])
+        emb = discord.Embed(description="Holds your hand ^^")
+        link = random.choice(["https://media.giphy.com/media/Mn2QhV5RKVnDFPm3xS/giphy.gif",
+                                                                   "https://media.giphy.com/media/XJbZUmQTozjeovfDj5/giphy.gif",
+                                                                   "https://media.giphy.com/media/65ARJduu1Ayge6lbb1/giphy.gif",
+                                                                   "https://media.giphy.com/media/2UH5JGSkV7bL9KPxns/giphy.gif",
+                                                                   "https://media.giphy.com/media/836SlQqmguF97blW7Z/giphy.gif",
+                                                                   "https://media.giphy.com/media/67SPxHsGYvZRjBvPVG/giphy.gif",
+                                                                   "https://media.giphy.com/media/9GJ0TobPeqryujJKrx/giphy.gif",
+                                                                   "https://media.giphy.com/media/1xkOTx6HQGHAlHhIJj/giphy.gif",
+                                                                   "https://media.giphy.com/media/eB1n5v1AnJkhUam6rM/giphy.gif",
+                                                                   "https://media.giphy.com/media/1rMZB4yEPp92SandyF/giphy.gif",
+                                                                   "https://media.giphy.com/media/ksbxFxDu8nbl2ulbpP/giphy.gif",
+                                                                   "https://media.giphy.com/media/cXZT5GVAUoMCIzifAM/giphy.gif",
+                                                                   "https://media.giphy.com/media/m9rNHsYSVNtUzmg67j/giphy.gif",
+                                                                   "https://media.giphy.com/media/51YdFcndAtxP6Gphmz/giphy.gif",
+                                                                   "https://media.giphy.com/media/cJk2CoSB0fLBxSpVJn/giphy.gif",
+                                                                   "https://media.giphy.com/media/1miLExf9KIOihnq4Lo/giphy.gif",
+                                                                   "https://media.giphy.com/media/1g2C2z64PRTqf6vQo5/giphy.gif",
+                                                                   "https://media.giphy.com/media/vuPcWxM8f9HOOO9GPX/giphy.gif",
+                                                                   "https://media.giphy.com/media/9rx8p3i2CLq6e42uCh/giphy.gif",
+                                                                   "https://media.giphy.com/media/7vzDkVMCaFbazqyMma/giphy.gif",
+                                                                   "https://media.giphy.com/media/31Q1ECNJI1iBSEO4zW/giphy.gif",
+                                                                   "https://media.giphy.com/media/31Q1ECNJI1iBSEO4zW/giphy.gif",
+                                                                   "https://media.giphy.com/media/521ZTNMaFn8zqF4yhQ/giphy.gif",
+                                                                   "https://media.giphy.com/media/1BfBbUl1bsOKxeJCPo/giphy.gif",
+                                                                   "https://media.giphy.com/media/1dKSVKfX0lm62obCp4/giphy.gif",
+                                                                   "https://media.giphy.com/media/1Y6eL9Rfjozej34MY3/giphy.gif",
+                                                                   "https://media.giphy.com/media/yvX1KHKIRBpETHGtna/giphy.gif",
+                                                                   "https://media.giphy.com/media/1sxtTkXPJzzHT6AFae/giphy.gif",
+                                                                   "https://media.giphy.com/media/83cZKqPesn1gUeYclY/giphy.gif",
+                                                                   "https://media.giphy.com/media/KVoMsguO6PYPAm5r7n/giphy.gif",
+                                                                   "https://media.giphy.com/media/2tOTUM0P3vgxLlmdq4/giphy.gif"])
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
 
