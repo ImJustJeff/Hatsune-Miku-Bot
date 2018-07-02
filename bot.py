@@ -120,8 +120,8 @@ $accept,
         emb = (discord.Embed(title="Here is everything listed that is under construction", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="I'm currently getting these new commands", value="I'm not getting new commands for now", inline=True)
         emb.add_field(name='These commands are getting an update', value='No commands are getting a update', inline=True)
-        emb.add_field(name='Here are my most recently new commands', value='$poke, $pat & $slap', inline=True)
-        emb.add_field(name='My most recently changed commands, check them out now', value='There is no command that got a change', inline=True)
+        emb.add_field(name='Here are my most recently new commands', value='I have no new commands yet ;-;', inline=True)
+        emb.add_field(name='My most recently changed commands, check them out now', value='$sagiri, $miku, $koneko, $meme, $louise, $raziel, $couple, $hug, $pat, $slap, $poke, $holdhands, $kiss, $popcorn, $stfu', inline=True)
         emb.set_author(name="Hatsune Miku Bot")
         emb.set_image(url='https://i.imgur.com/E7O1J7A.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
@@ -750,7 +750,7 @@ $accept,
         await client.send_message(message.channel, embed=emb)
 
     elif message.content.startswith("$stfu"):
-        emb = discord.Embed(description="JUST SHUT UP ALREADY!!!!")
+        emb = discord.Embed(description="JUST SHUT UP ALREADY!!!! :rage:")
         link = random.choice(["https://media.giphy.com/media/65VK7kBbhHpsVgaBTd/giphy.gif",
                                                                    "https://media.giphy.com/media/7FgI8OGvQmJRO30LXV/giphy.gif",
                                                                    "https://media.giphy.com/media/1zJUxWUeLLWQ06qi0G/giphy.gif",
