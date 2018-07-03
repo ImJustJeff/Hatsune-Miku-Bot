@@ -40,7 +40,7 @@ Check two: Complete
 Check three: Completed
 Hatsune Miku Bot is Reporting for Duty""")
 
-   elif message.content.startswith("$commands"):
+    elif message.content.startswith("$commands"):
         emb = (discord.Embed(title="These are all my commands please enjoy them", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="General commands:", value=
 """
