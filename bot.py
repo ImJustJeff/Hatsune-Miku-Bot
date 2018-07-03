@@ -40,7 +40,7 @@ Check two: Complete
 Check three: Completed
 Hatsune Miku Bot is Reporting for Duty""")
 
-    elif message.content.startswith("$commands"):
+   elif message.content.startswith("$commands"):
         emb = (discord.Embed(title="These are all my commands please enjoy them", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="General commands:", value=
 """
@@ -49,27 +49,29 @@ $commands,
 $construction,
 $invite,
 $owner,
-$contact,
+$contact
 
 
 --------------------
 """, inline=True)
         emb.add_field(name="mod commands:", value="""
 --------------------
-ALL MY MOD
-COMMANDS
-ARE GONE FOR
-NOW BUT WILL
-RETURN SOON!
-
-
+$serverinfo,
+$userinfo,
+$ban,
+$mute,
+$unmute,
+$kick,
+$cleanup,
 --------------------
 """, inline=True)
         emb.add_field(name="Pictures/Gif commands:", value="""
 --------------------
+$eat,
+$loli,
 $kiss,
 $meme,
-$hug,
+$hugs,
 $pat,
 $slap,
 $poke,
@@ -81,6 +83,7 @@ $miku,
 $koneko,
 $popcorn,
 $stfu,
+$couple,
 --------------------
 """, inline=True)
         emb.add_field(name="Fun commands", value="""
@@ -90,6 +93,9 @@ $8ball,
 $hello,
 $tsundere,
 $flip,
+$rps,
+$urban,
+$choose,
 $accept,
 
 
