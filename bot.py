@@ -719,8 +719,6 @@ $accept,
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
 
-async def on_message(message):
-
     if message.content.startswith("$rank help"):
         emb = (discord.Embed(title="Hatsune Miku Bot", url='http://bit.ly/2G7mB7Y', color=0x3f35f9))
         emb.add_field(name='Welcome to the help desk of the rankings', value='There is one way to rank and that is typing!!', inline=True)
