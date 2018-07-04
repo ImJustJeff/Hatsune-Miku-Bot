@@ -719,7 +719,6 @@ $accept,
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
 
-@client.event
 async def on_message(message):
 
     if message.content.startswith("$rank help"):
