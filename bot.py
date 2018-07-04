@@ -140,60 +140,6 @@ $accept,
         emb.set_image(url='https://i.imgur.com/i8lO032.png')
         await client.send_message(message.channel, "{0.author.mention}".format(message), embed=emb)
 
-    elif message.content.startswith("$nightcore"):
-        emb = (discord.Embed(title="Janieck - Does It Matter [NightCore]", url='https://youtu.be/SkPuP6VglhQ', description="Ever wanted to just have some Little Talks with someone?", color=0x3f35f9))
-        emb.add_field(name='Subscribe to my channel', value='https://www.youtube.com/c/JustJeff9924', inline=True)
-        emb.add_field(name='Make sure to watch the new video', value='https://youtu.be/SkPuP6VglhQ', inline=True)
-        emb.set_author(name="JustJeff Official NightCore", url='https://www.youtube.com/c/JustJeff9924')
-        emb.set_image(url='https://i.imgur.com/7wgVrPZ.jpg')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, "@everyone", embed=emb)
-
-    elif message.content.startswith("$jeff"):
-        emb = (discord.Embed(title="Janieck - Does It Matter [NightCore]", url='https://youtu.be/SkPuP6VglhQ', description="Ever wanted to just have some Little Talks with someone?", color=0x3f35f9))
-        emb.add_field(name='Subscribe to my channel', value='https://www.youtube.com/c/JustJeff9924', inline=True)
-        emb.add_field(name='Make sure to watch the new video', value='https://youtu.be/SkPuP6VglhQ', inline=True)
-        emb.set_author(name="JustJeff Official NightCore", url='https://www.youtube.com/c/JustJeff9924')
-        emb.set_image(url='https://i.imgur.com/7wgVrPZ.jpg')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, embed=emb)
-
-    elif message.content.startswith("$lel"):
-        emb = (discord.Embed(title="Your Reality [NightCore Unreleased]", url='https://soundcloud.com/justjeff-205750120/your-reality', description="Another Doki Doki song? Yes we have another one people. I hope you can enjoy this in Your Reality", color=0x3f35f9))
-        emb.add_field(name='Be sure to follow my SoundCloud', value='https://soundcloud.com/justjeff-205750120', inline=True)
-        emb.add_field(name='Listen to my latest song here', value='https://soundcloud.com/justjeff-205750120/your-reality', inline=True)
-        emb.set_author(name="JustJeff Official Unreleased NightCores", url='https://soundcloud.com/justjeff-205750120')
-        emb.set_image(url='https://i.imgur.com/K0qlynx.png')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, embed=emb)
-
-    elif message.content.startswith("$soundcloud"):
-        emb = (discord.Embed(title="Your Reality [NightCore Unreleased]", url='https://soundcloud.com/justjeff-205750120/your-reality', description="Another Doki Doki song? Yes we have another one people. I hope you can enjoy this in Your Reality", color=0x3f35f9)) 
-        emb.add_field(name='Be sure to follow my SoundCloud', value='https://soundcloud.com/justjeff-205750120', inline=True)
-        emb.add_field(name='Listen to my latest song here', value='https://soundcloud.com/justjeff-205750120/your-reality', inline=True)
-        emb.set_author(name="JustJeff Official Unreleased NightCores", url='https://soundcloud.com/justjeff-205750120')
-        emb.set_image(url='https://i.imgur.com/K0qlynx.png')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, "@everyone", embed=emb)
-
-    elif message.content.startswith("$stream"):
-        emb = (discord.Embed(title="NightCore + Anime Music", url='https://www.youtube.com/c/JustJeff9924/live', description="And we are live again everyone come and join in for the fun :3", color=0x3f35f9))
-        emb.add_field(name='Subscribe to my channel', value='https://www.youtube.com/channel/UCmVBqm9zCXCLe_bLSBx23nQ', inline=True)
-        emb.add_field(name='Watch the stream here', value='https://www.youtube.com/c/JustJeff9924/live', inline=True)
-        emb.set_author(name="JustJeff Official NightCore", url='https://www.youtube.com/channel/UCmVBqm9zCXCLe_bLSBx23nQ')
-        emb.set_image(url='https://i.imgur.com/jaq7C9G.jpg')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, "@everyone", embed=emb)
-
-    elif message.content.startswith("$live"):
-        emb = (discord.Embed(title="NightCore + Anime Music", url='https://www.youtube.com/c/JustJeff9924/live', description="And we are live again everyone come and join in for the fun :3", color=0x3f35f9))
-        emb.add_field(name='Subscribe to my channel', value='https://www.youtube.com/channel/UCmVBqm9zCXCLe_bLSBx23nQ', inline=True)
-        emb.add_field(name='Watch the stream here', value='https://www.youtube.com/c/JustJeff9924/live', inline=True)
-        emb.set_author(name="JustJeff Official NightCore", url='https://www.youtube.com/channel/UCmVBqm9zCXCLe_bLSBx23nQ')
-        emb.set_image(url='https://i.imgur.com/jaq7C9G.jpg')
-        emb.set_thumbnail(url='https://i.imgur.com/We7bHyU.jpg')
-        await client.send_message(message.channel, embed=emb)
-
     elif message.content.startswith("$ping"):
         await client.send_message(message.channel, "pong!")
 
