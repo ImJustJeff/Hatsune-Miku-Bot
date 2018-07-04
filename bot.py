@@ -109,6 +109,18 @@ $accept,
 
 --------------------
 """, inline=True)
+        emb.add_field(name="Fun commands", value="""
+--------------------
+$bank,
+$bank register,
+$payday,
+$slot,
+$bank balance,
+$bank transfer,
+$rank help,
+$profile,
+--------------------
+""", inline=True)
         emb.set_image(url='https://i.imgur.com/MUzvy9j.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
         await client.send_message(message.channel, embed=emb)
