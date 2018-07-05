@@ -251,5 +251,5 @@ def get_level(user_id:int):
     except KeyError:
         return 0
 
-client.run("Mzg0NzA4OTQ2ODI2NjI1MDM1.DP2vpA.lkuzj_99tjAGqzDZfBaBhx9pF-g")
+client.run("BOT_TOKEN")
 
