@@ -751,7 +751,7 @@ Till the 500.""", inline=True)
     if message.content.lower().startswith('$profile'):
         await client.send_message(message.channel, "You have %s xp which makes you level %s %s"%(get_xp(message.author.id), get_level(message.author.id), message.author.mention))
 
-    user_add_xp(message.author.id, random.choice ([100, 150, 200, 250, 300, 350, 400, 450, 500, 100, 150, 200, 250, 300, 350, 400, 450, 500,]))
+    user_add_xp(message.author.id, random.choice ([100, 150, 200, 250, 300, 350, 400, 450, 500, 100, 150, 200, 250, 300, 350, 400, 450, 500, 50]))
 
     if get_xp(message.author.id) >= 100 and get_level(message.author.id) ==0:
         add_level(message.author.id)
