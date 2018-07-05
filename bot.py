@@ -731,5 +731,5 @@ $profile,
         emb.set_image(url=link)
         await client.send_message(message.channel, embed=emb)
         
-client.run("Mzg0NzA4OTQ2ODI2NjI1MDM1.DP2vpA.lkuzj_99tjAGqzDZfBaBhx9pF-g")
+client.run("BOT_TOKEN")
 
