@@ -4,73 +4,71 @@ import random
 import os
 import json
 import os.path
+import dbl
+import logging
 from discord.ext.commands import Bot
 from discord.ext import commands
+from discord.ext import commands, tasks
+from random import choice
 
-client = discord.Client()
-bot = discord.Client()
-discord.Client.setUsername='Koneko'
-my_bot = Bot(command_prefix="$")
-bothAuth = ''
 
-@client.event
+bot = commands.Bot(command_prefix="$")
+
+@bot.event
 async def on_ready():
-    print("Logged in as :")
-    print(client.user.name)
-    print("ID:")
-    print(client.user.id)
-    print("Ready to use")
-    discord.Client.setUsername='Koneko'
-async def wait_until_login():
-    discord.Client.setUsername='Koneko'
-    await client.change_presence(game=discord.Game(name="Reporting for Duty!! Use '$commands'to see all my commands"))
+    print("Connected and ready to use!")
 
+@bot.command(pass_context=True)
+async def ping(ctx):
+    await ctx.send("Pong!")
 
-@client.event
-async def on_message (message):
-    if message.author == client.user:
-        await client.change_presence(game=discord.Game(name="Reporting for Duty!! Use '$commands'to see all my commands"))
-        discord.Client.setUsername='Koneko'
-        return
-    elif message.content.startswith("$owner"):
-        await client.send_message(message.channel,"My master is <@266245400988614656>, he made me into what i am right now :D and he is still developing me :3")
-
-
-    elif message.content.startswith("$start"):
-        await client.send_message(message.channel,"""Check one: Completed
-Check two: Complete
-Check three: Completed
-Hatsune Miku Bot is Reporting for Duty""")
-
-    elif message.content.startswith("$commands"):
+@bot.command(pass_context=True)
+async def commands(ctx):
         emb = (discord.Embed(title="These are all my commands please enjoy them", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="General commands:", value=
 """
---------------------
+-------------------
 $commands,
 $construction,
 $invite,
-$owner,
-$contact
+~~$owner,~~
+~~$contact~~
 
 
---------------------
+
+
+
+
+
+
+
+
+
+-------------------
 """, inline=True)
-        emb.add_field(name="mod commands:", value="""
---------------------
-$serverinfo,
-$userinfo,
-$ban,
-$mute,
-$unmute,
-$kick,
-$cleanup,
---------------------
+        emb.add_field(name="Mod commands:", value="""
+-------------------
+~~$serverinfo,~~
+~~$userinfo,~~
+~~$ban,~~
+~~$mute,~~
+~~$unmute,~~
+~~$kick,~~
+~~$cleanup,~~
+
+
+
+
+
+
+
+
+
+-------------------
 """, inline=True)
         emb.add_field(name="Pictures/Gif commands:", value="""
---------------------
-$eat,
-$loli,
+-------------------
+~~$eat,~~
 $kiss,
 $meme,
 $hugs,
@@ -86,57 +84,38 @@ $koneko,
 $popcorn,
 $stfu,
 $couple,
---------------------
+-------------------
 """, inline=True)
         emb.add_field(name="Fun commands", value="""
---------------------
+-------------------
 $ping,
 $8ball,
 $hello,
 $tsundere,
 $flip,
-$rps,
-$urban,
-$choose,
-$accept,
-
-
-
-
-
-
-
-
---------------------
+~~$rps,~~
+~~$urban,~~
+~~$choose,~~
+-------------------
 """, inline=True)
         emb.add_field(name="Fun commands", value="""
---------------------
-$bank,
-$bank register,
-$payday,
-$slot,
-$bank balance,
-$bank transfer,
-$rank help,
-$profile,
---------------------
+-------------------
+~~$bank,~~
+~~$bank register,~~
+~~$payday,~~
+~~$slot,~~
+~~$bank balance,~~
+~~$bank transfer,~~
+~~$rank help,~~
+~~$profile,~~
+-------------------
 """, inline=True)
         emb.set_image(url='https://i.imgur.com/MUzvy9j.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$gone"):
-        emb = (discord.Embed(title="My commands are in these 2 categories", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
-        emb.add_field(name="So here are all my general commands", value='$commands, $construction, $invite, $jeff & $owner', inline=True)
-        emb.add_field(name='These are all my fun commands', value='$ping, $8ball, $kiss, $meme, $hugs, $pat, $slap, $poke, $holdhands, $hello, $tsundere, $louise, $raziel, $sagiri, $miku & $koneko', inline=True)
-        emb.set_author(name="Hatsune Miku Bot")
-        emb.set_author(name="Hatsune Miku Bot", url='http://bit.ly/2G7mB7Y')
-        emb.set_image(url='https://i.imgur.com/MUzvy9j.png')
-        emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
-        await client.send_message(message.channel, embed=emb)
-
-
-    elif message.content.startswith("$construction"):
+@bot.command(pass_context=True)
+async def construction(ctx):
         emb = (discord.Embed(title="Here is everything listed that is under construction", url='https://justjeff-official.webnode.com/hatsune-miku-bot/', color=0x3f35f9))
         emb.add_field(name="I'm currently getting these new commands", value="I'm not getting new commands for now", inline=True)
         emb.add_field(name='These commands are getting an update', value='No commands are getting a update', inline=True)
@@ -145,64 +124,66 @@ $profile,
         emb.set_author(name="Hatsune Miku Bot")
         emb.set_image(url='https://i.imgur.com/E7O1J7A.png')
         emb.set_thumbnail(url='https://i.imgur.com/7Moz5io.png')
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$invite"):
+@bot.command(pass_context=True)
+async def invite(ctx):
         emb = (discord.Embed(title="Hatsune Miku Bot", url='http://bit.ly/2G7mB7Y', color=0x3f35f9))
         emb.add_field(name='If you want me to join your server aswell please use this link', value='http://bit.ly/2G7mB7Y', inline=True)
         emb.add_field(name='Search my information on my official webpage', value='https://justjeff-official.webnode.com/hatsune-miku-bot/', inline=True)
         emb.set_image(url='https://i.imgur.com/i8lO032.png')
-        await client.send_message(message.channel, "{0.author.mention}".format(message), embed=emb)
+        await ctx.send((ctx.message.author.mention), embed=emb)
 
-    elif message.content.startswith("$ping"):
-        await client.send_message(message.channel, "pong!")
-
-    elif message.content.startswith("$accept"):
-        await client.send_message(message.channel, "accept")
-
-    elif message.content.startswith("$8ball"):
-        await client.send_message(message.channel, random.choice ([":8ball: It is certain {0.author.mention}".format(message),
-                                                                   ":8ball: It is decidedly so {0.author.mention}".format(message),
-                                                                   ":8ball: Without a doubt {0.author.mention}".format(message),
-                                                                   ":8ball: Yes definitely {0.author.mention}".format(message),
-                                                                   ":8ball: You may rely on it {0.author.mention}".format(message),
-                                                                   ":8ball: As I see it, yes {0.author.mention}".format(message),
-                                                                   ":8ball: Most likely {0.author.mention}".format(message),
-                                                                   ":8ball: Outlook good {0.author.mention}".format(message),
-                                                                   ":8ball: Yes {0.author.mention}".format(message),
-                                                                   ":8ball: Signs point to yes {0.author.mention}".format(message),
-                                                                   ":8ball: Reply hazy try again {0.author.mention}".format(message),
-                                                                   ":8ball: Ask again later {0.author.mention}".format(message),
-                                                                   ":8ball: Better not tell you now {0.author.mention}".format(message),
-                                                                   ":8ball: Cannot predict now {0.author.mention}".format(message),
-                                                                   ":8ball: Concentrate and ask again {0.author.mention}".format(message),
-                                                                   ":8ball: Don't count on it {0.author.mention}".format(message),
-                                                                   ":8ball: My reply is no {0.author.mention}".format(message),
-                                                                   ":8ball: My sources say no {0.author.mention}".format(message),
-                                                                   ":8ball: Outlook not so good {0.author.mention}".format(message),
-                                                                   ":8ball: Very doubtful {0.author.mention}".format(message)]))
+@bot.command(name="8", aliases=["8ball"])
+async def _8ball(ctx):
+        await ctx.send(random.choice ([(":8ball: It is certain "+ctx.message.author.mention),
+                                                                   (":8ball: It is decidedly so "+ctx.message.author.mention),
+                                                                   (":8ball: Without a doubt "+ctx.message.author.mention),
+                                                                   (":8ball: Yes definitely "+ctx.message.author.mention),
+                                                                   (":8ball: You may rely on it "+ctx.message.author.mention),
+                                                                   (":8ball: As I see it, yes "+ctx.message.author.mention),
+                                                                   (":8ball: Most likely "+ctx.message.author.mention),
+                                                                   (":8ball: Outlook good "+ctx.message.author.mention),
+                                                                   (":8ball: Yes "+ctx.message.author.mention),
+                                                                   (":8ball: Signs point to yes "+ctx.message.author.mention),
+                                                                   (":8ball: Reply hazy try again "+ctx.message.author.mention),
+                                                                   (":8ball: Ask again later "+ctx.message.author.mention),
+                                                                   (":8ball: Better not tell you now "+ctx.message.author.mention),
+                                                                   (":8ball: Cannot predict now "+ctx.message.author.mention),
+                                                                   (":8ball: Concentrate and ask again "+ctx.message.author.mention),
+                                                                   (":8ball: Don't count on it "+ctx.message.author.mention),
+                                                                   (":8ball: My reply is no "+ctx.message.author.mention),
+                                                                   (":8ball: My sources say no "+ctx.message.author.mention),
+                                                                   (":8ball: Outlook not so good "+ctx.message.author.mention),
+                                                                   (":8ball: Very doubtful "+ctx.message.author.mention)]))
         
-    elif message.content.startswith("$hello"):
-        await client.send_message(message.channel, random.choice (["Hello *hugs* {0.author.mention}".format(message),
-                                                                   "Hii I missed you {0.author.mention}".format(message),
-                                                                   "You want to talk to me?{0.author.mention}".format(message)]))
-    elif message.content.startswith("$flip"):
-        await client.send_message(message.channel, random.choice (["It is tails {0.author.mention}".format(message),
-                                                                   "It is heads {0.author.mention}".format(message),
-                                                                   "I threw it to high and lost the coin.. {0.author.mention}".format(message)]))
+@bot.command(pass_context=True)
+async def hello(ctx):
+        await ctx.send(random.choice ([("Hello *hugs* "+ctx.message.author.mention),
+                                                                   ("Hii I missed you "+ctx.message.author.mention),
+                                                                   ("You want to talk to me?"+ctx.message.author.mention)]))
+@bot.command(pass_context=True)
+async def flip(ctx):
+        await ctx.send(random.choice ([("It is tails "+ctx.message.author.mention),
+                                                                   ("It is heads "+ctx.message.author.mention),
+                                                                   ("I threw it to high and lost the coin.. "+ctx.message.author.mention)]))
     
-    elif message.content.startswith("$tsundere"):
-        await client.send_message(message.channel, random.choice (["Why you talk to me? {0.author.mention}".format(message),
-                                                                    "I want to slap you in the face right now.... {0.author.mention}".format(message),
-                                                                    "You BAKA!!! {0.author.mention}".format(message),
-                                                                    "Look guys its a pervert *points to* {0.author.mention}".format(message),
+@bot.command(pass_context=True)
+async def tsundere(ctx):
+     msg = "Look guys its a pervert *points to* "
+     await ctx.send(random.choice ([("Why you talk to me?"+ctx.message.author.mention),
+                                                                    ("I want to slap you in the face right now.... "+ctx.message.author.mention),
+                                                                    ("You BAKA!!! "+ctx.message.author.mention),
+                                                                    (msg+choice(tuple(member.mention for member in ctx.guild.members if not member.bot and member!=ctx.author))),
                                                                     "GET AWAY FROM ME PERV",
                                                                     "Why are you talking to me? BAKA!!!",
                                                                     "I'm not a tsundere!",
                                                                     "Stupid Octopus TAKE IT BACK!!",
                                                                     "It's not like I like you or anything"]))
-        
-    elif message.content.startswith("$koneko"):
+
+
+@bot.command(pass_context=True)
+async def koneko(ctx):
         emb = discord.Embed(description="Here is your Koneko pic")
         link = random.choice(["https://cdn.discordapp.com/attachments/379675847747174410/379676169483583498/232c995f3a08b1f51d04f374dc8ad0ff98d64dda_hq.jpg",
                                                                   "https://cdn.discordapp.com/attachments/379675847747174410/379676170477764609/16bd8e7879ec7d52133e8d849e49facc259c04e7_hq.gif",
@@ -228,10 +209,11 @@ $profile,
                                                                   "https://cdn.discordapp.com/attachments/379675847747174410/379676331283316736/maxresdefault_1.jpg",
                                                                   "https://cdn.discordapp.com/attachments/379675847747174410/379676340737277952/maxresdefault.jpg"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
     
-    elif message.content.startswith("$louise"):
+@bot.command(pass_context=True)
+async def louise(ctx):
         emb = discord.Embed(description="Here is your Louise pic")
         link = random.choice(["https://cdn.discordapp.com/attachments/379705513103065098/385525389356695590/zero_no_tsukaima_louise_francoise_le_blanc_de_la_valliere_siesta_girl_maid_wand_34325_602x339.jpg",
                                                                   "https://cdn.discordapp.com/attachments/379705513103065098/385525385724690432/zero_no_tsukaima_louise_francoise_le_blanc_de_la_valliere_henrietta_de_tristain_girl_pose_look_36699.jpg",
@@ -259,10 +241,11 @@ $profile,
                                                                   "https://cdn.discordapp.com/attachments/379705513103065098/385525263045361664/25fbe237485992c455da78a05ef5f7c6.jpg",
                                                                   "https://cdn.discordapp.com/attachments/379705513103065098/385525259383603200/6mjHU.jpg"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
 
-    elif message.content.startswith("$raziel"):
+@bot.command(pass_context=True)
+async def raziel(ctx):
         emb = discord.Embed(description="Here is your Raziel pic")
         link = random.choice(["https://cdn.discordapp.com/attachments/364775449932333057/385546620709765124/001.png",
                                                                    "https://cdn.discordapp.com/attachments/364775449932333057/385546528573358081/Ashtar_V1.png",
@@ -271,9 +254,10 @@ $profile,
                                                                    "https://cdn.discordapp.com/attachments/364775449932333057/385546404766023680/Raziel.png",
                                                                    "https://cdn.discordapp.com/attachments/364775449932333057/385546397077864459/Raziel_x3.png"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$meme"):
+@bot.command(pass_context=True)
+async def meme(ctx):
         emb = discord.Embed(description="The meme lord has spoken")
         link = random.choice(["https://i.imgur.com/dMb4EJh.jpg",
                                                                    "https://i.imgur.com/8DYtXvq.jpg",
@@ -300,9 +284,10 @@ $profile,
                                                                    "https://i.imgur.com/nqJDdd3.jpg",
                                                                    "https://i.imgur.com/JPxtdHU.jpg"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$sagiri"):
+@bot.command(pass_context=True)
+async def sagiri(ctx):
         emb = discord.Embed(description="Here is the loli Sagiri")
         link = random.choice(["https://i.imgur.com/xKAGGcl.jpg",
                                                                    "https://i.imgur.com/YUaJcnm.jpg",
@@ -356,9 +341,10 @@ $profile,
                                                                    "https://i.imgur.com/tXTS0Tg.png",
                                                                    "https://i.imgur.com/XsA4rpc.png"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$miku"):
+@bot.command(pass_context=True)
+async def miku(ctx):
         emb = discord.Embed(description="The cute Hatsune Miku is here")
         link = random.choice(["https://i.imgur.com/hOxLRSd.jpg",
                                                                    "https://i.imgur.com/EgaUY6R.jpg",
@@ -395,9 +381,10 @@ $profile,
                                                                    "https://i.imgur.com/bKBvy8L.jpg",
                                                                    "https://i.imgur.com/QGYNiIo.jpg"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$couple"):
+@bot.command(pass_context=True)
+async def couple(ctx):
         emb = discord.Embed(description="Look at this couple aren't they (kinda) cute ^-^")
         link = random.choice(["https://i.imgur.com/y3tdypG.jpg",
                                                                    "https://i.imgur.com/4eU4Wn9.jpg",
@@ -479,9 +466,10 @@ $profile,
                                                                    "https://i.imgur.com/qCpzSGV.jpg",
                                                                    "https://i.imgur.com/LFx1sE8.jpg",])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
         
-    elif message.content.startswith("$hug"):
+@bot.command(pass_context=True)
+async def hug(ctx):
         emb = discord.Embed(description="Hugs you ^-^")
         link = random.choice(["https://media.giphy.com/media/sRFu8y27ZvWcizXvhZ/giphy.gif",
                                                                    "https://media.giphy.com/media/piJGRC4SI3rFlsStVl/giphy.gif",
@@ -549,10 +537,11 @@ $profile,
                                                                    " https://media.giphy.com/media/fituC6UJqlIe5KWVZ0/giphy.gif",
                                                                    "https://media.giphy.com/media/etKfIRTv7yCJwhkZWf/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
                                                                    
 
-    elif message.content.startswith("$holdhands"):
+@bot.command(pass_context=True)
+async def holdhands(ctx):
         emb = discord.Embed(description="Holds your hand ^^")
         link = random.choice(["https://media.giphy.com/media/Mn2QhV5RKVnDFPm3xS/giphy.gif",
                                                                    "https://media.giphy.com/media/XJbZUmQTozjeovfDj5/giphy.gif",
@@ -586,9 +575,10 @@ $profile,
                                                                    "https://media.giphy.com/media/KVoMsguO6PYPAm5r7n/giphy.gif",
                                                                    "https://media.giphy.com/media/2tOTUM0P3vgxLlmdq4/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$kiss"): 
+@bot.command(pass_context=True)
+async def kiss(ctx): 
         emb = discord.Embed(description="Kisses you <3")
         link = random.choice(["https://media.giphy.com/media/3obegyJLaSb0tKPQXo/giphy.gif",
                                                                    "https://media.giphy.com/media/fdzUxG2NWezLFVftaZ/giphy.gif",
@@ -608,9 +598,10 @@ $profile,
                                                                    "https://media.giphy.com/media/55ojWaw7MGJhmY9VWy/giphy.gif",
                                                                    "https://media.giphy.com/media/1k2UWbInw3WwQc7hxc/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$poke"):
+@bot.command(pass_context=True)
+async def poke(ctx):
         emb = discord.Embed(description="I want you attention so POKE")
         link = random.choice(["https://media.giphy.com/mttps://imedia/7mYTUOUy2C9yj1GSne/giphy.gif",
                                                                    "https://media.giphy.com/media/felNRoKZ7NPqHq8p80/giphy.gif",
@@ -635,9 +626,10 @@ $profile,
                                                                    "https://media.giphy.com/media/fMAah7ahN479IdlErV/giphy.gif",
                                                                    "https://media.giphy.com/media/9DAxGRmfXt1klFZT8W/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$slap"):
+@bot.command(pass_context=True)
+async def slap(ctx):
         emb = discord.Embed(description="I'm so mad at you so SLAP!!!")
         link = random.choice(["https://media.giphy.com/media/tJpCo5cufLkxSoU9xs/giphy.gif",
                                                                    "https://media.giphy.com/media/cdXxSGvi8QycANUTB1/giphy.gif",
@@ -666,9 +658,10 @@ $profile,
                                                                    "https://media.giphy.com/media/2xPSQb3NnvegY1qyPY/giphy.gif",
                                                                    "https://media.giphy.com/media/felNRoKZ7NPqHq8p80/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
                                   
-    elif message.content.startswith("$pat"):
+@bot.command(pass_context=True)
+async def pat(ctx):
         emb = discord.Embed(description="There, there it's alright")
         link = random.choice(["https://media.giphy.com/media/8BkpilCUQzCf2fdpiZ/giphy.gif",
                                                                    "https://media.giphy.com/media/EpNd51E8KV9IvTlugk/giphy.gif",
@@ -695,9 +688,10 @@ $profile,
                                                                    "https://media.giphy.com/media/3BjlOCKxEM7fyNtsfi/giphy.gif"])
                                                                 
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$popcorn"):
+@bot.command(pass_context=True)
+async def popcorn(ctx):
         emb = discord.Embed(description=":popcorn: anyone...?")
         link = random.choice(["https://media.giphy.com/media/jnUJbfQ7atI2l8JxnC/giphy.gif",
                                                                    "https://media.giphy.com/media/5th9AXWLduy8tiee79/giphy.gif",
@@ -713,9 +707,10 @@ $profile,
                                                                    "https://media.giphy.com/media/RIW8aISkVsQH7AMBof/giphy.gif",
                                                                    "https://media.giphy.com/media/8Ff4F0woCBDyEXDt7w/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
+        await ctx.send(embed=emb)
 
-    elif message.content.startswith("$stfu"):
+@bot.command(pass_context=True)
+async def stfu(ctx):
         emb = discord.Embed(description="JUST SHUT UP ALREADY!!!! :rage:")
         link = random.choice(["https://media.giphy.com/media/65VK7kBbhHpsVgaBTd/giphy.gif",
                                                                    "https://media.giphy.com/media/7FgI8OGvQmJRO30LXV/giphy.gif",
@@ -729,7 +724,5 @@ $profile,
                                                                    "https://media.giphy.com/media/lzDaZZpTAak9Lb8BtS/giphy.gif",
                                                                    "https://media.giphy.com/media/u0aX5a6x5NjGQif3f8/giphy.gif"])
         emb.set_image(url=link)
-        await client.send_message(message.channel, embed=emb)
-        
-client.run("BOT_TOKEN")
-
+        await ctx.send(embed=emb)
+bot.run("TOKEN")
